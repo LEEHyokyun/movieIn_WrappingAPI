@@ -1,8 +1,9 @@
-import { getmovie } from './db.js'
+import { checkmovie, getmovie } from './db.js'
 
 const resolvers = {
     Query: {
-        getmovie : () => getmovie()
+        checkmovie : () => checkmovie(),
+        getmovie : (_, {limit, rating}) => getmovie(limit, rating)
         }
 }
 
