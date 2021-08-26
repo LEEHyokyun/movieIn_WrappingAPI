@@ -27,21 +27,25 @@ export const getmovie = (limit, rating) => {
     
 }
 
+const SEEMOVIE_URL = 'https://yts.mx/api/v2/movie_details.json'
+
 //seemovie by axios
 export const seemovie = async (id) => {
     //const movies = await axios.get('https://yts.mx/api/v2/list_movies.json')
-    //console.log(movies)
-    const{
-        data:{
-            data: {movies}
+    
+    //console.log(movies) 
+    const { data: 
+        {
+            data: {movie}
         }
+    }
         //data params (by then or callback)
-    } = await axios.get('https://yts.mx/api/v2/list_movies.json', {
+     = await axios.get(SEEMOVIE_URL, {
         params: {
             movie_id : id
         }
     })
 
-    return movies
+    return movie
 }
 
